@@ -1,0 +1,18 @@
+<h1>Support Client</h1>
+<p>Contactez-nous pour toute assistance ou demande d'information.</p>
+
+<div class="chat-container">
+    <div class="messages">
+      <div *ngFor="let message of messages" [class]="message.sender === 'Service Client' ? 'message left' : 'message right'">
+        <div class="message-sender">{{ message.sender }}</div>
+        <div class="message-content">{{ message.content }}</div>
+      </div>
+    </div>
+    <div class="input-area">
+      <input [(ngModel)]="newMessage.sender" placeholder="Entrez votre nom ici..." />
+      <input [(ngModel)]="newMessage.content" placeholder="Entrez votre message ici..." />
+      <button (click)="sendMessage()">Envoyer</button>
+    </div>
+  </div>
+  
+  
